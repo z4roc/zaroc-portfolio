@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 import { Highlight, themes } from "prism-react-renderer";
 import { useTheme } from "next-themes";
+import { gitHubBaseUrl } from "@/lib/links";
 
 export default function HeroSection() {
   const [currentSnippetIndex, setCurrentSnippetIndex] = useState(0);
@@ -95,7 +96,7 @@ export default function HeroSection() {
           <div className="flex flex-col justify-center space-y-4">
             <div className="space-y-2">
               <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
-                Arthur 'ZAROC' Aktamirov
+                Arthur &apos;ZAROC&apos; Aktamirov
               </h1>
               <p className="text-xl text-muted-foreground">
                 Full Stack Developer
@@ -118,7 +119,7 @@ export default function HeroSection() {
             </div>
             <div className="flex items-center gap-4 pt-4">
               <Link
-                href="https://github.com"
+                href={gitHubBaseUrl}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -128,7 +129,7 @@ export default function HeroSection() {
                 </Button>
               </Link>
               <Link
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/arthur-aktamirov"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -176,26 +177,14 @@ export default function HeroSection() {
                     code={currentSnippet.code}
                     language={currentSnippet.language}
                   >
-                    {({
-                      className,
-                      style,
-                      tokens,
-                      getLineProps,
-                      getTokenProps,
-                    }) => (
+                    {({ style, tokens, getTokenProps }) => (
                       <pre
                         className="text-sm md:text-base font-mono bg-transparent"
                         style={{ ...style, background: "transparent" }}
                       >
                         {tokens.map((line, i) => {
-                          const { key: lineKey, ...restLineProps } =
-                            getLineProps({ line, key: i });
                           return (
-                            <div
-                              key={i}
-                              {...restLineProps}
-                              style={{ background: "transparent" }}
-                            >
+                            <div key={i} style={{ background: "transparent" }}>
                               {line.map((token, key) => {
                                 const { key: tokenKey, ...restTokenProps } =
                                   getTokenProps({ token, key });

@@ -7,45 +7,42 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
 import Link from "next/link";
+import { gitHubBaseUrl } from "@/lib/links";
+import { archIcon, csharpIcon, flutterIcon, nextjsIcon } from "@/lib/svgs";
+import { features } from "process";
 
 // Mock projects data
-const projects = [
+const projects: Project[] = [
   {
     id: 1,
-    title: "E-commerce Platform",
+    title: "ValStore",
     description:
-      "A full-featured e-commerce platform with product management, cart functionality, user authentication, and payment processing.",
-    logo: "/vercel.svg?height=80&width=80",
-    technologies: ["React", "Node.js", "MongoDB", "Express", "Stripe API"],
-    githubUrl: "https://github.com/username/ecommerce-platform",
-    websiteUrl: "https://ecommerce-platform.example.com",
+      "A mobile application for accessing your VALORANT Shop from anywhere.",
+    logo: "/logo/valstore.png",
+    technologies: ["Flutter", "Firebase", "Rest API", "Provider"],
+    githubUrl: `${gitHubBaseUrl}/valstore-mobile`,
+    websiteUrl: "https://valostore.zaroc.de",
     featured: true,
   },
   {
     id: 2,
-    title: "Task Management App",
+    title: "Kafka",
     description:
-      "A collaborative task management application with real-time updates, task assignment, and progress tracking.",
-    logo: "/placeholder.svg?height=80&width=80",
-    technologies: [
-      "Next.js",
-      "TypeScript",
-      "Tailwind CSS",
-      "Prisma",
-      "PostgreSQL",
-    ],
-    githubUrl: "https://github.com/username/task-management",
-    websiteUrl: "https://task-app.example.com",
+      "Host minecraft servers with a single click. A simple and easy to use web interface.",
+    logo: nextjsIcon,
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Docker"],
+    githubUrl: `${gitHubBaseUrl}/mcserver`,
+    websiteUrl: null,
     featured: true,
   },
   {
     id: 3,
-    title: "Weather Dashboard",
+    title: "Statify",
     description:
-      "A weather dashboard that displays current conditions and forecasts for multiple locations with interactive maps.",
-    logo: "/placeholder.svg?height=80&width=80",
-    technologies: ["JavaScript", "React", "OpenWeather API", "Mapbox API"],
-    githubUrl: "https://github.com/username/weather-dashboard",
+      "A web application that provides Spotify statistics and insights.",
+    logo: "/logo/statify_icon.png",
+    technologies: ["TypeScript", "Next.js", "Spotify API", "Tailwind CSS"],
+    githubUrl: `${gitHubBaseUrl}/statify`,
     websiteUrl: null,
     featured: false,
   },
@@ -54,31 +51,64 @@ const projects = [
     title: "Portfolio Website",
     description:
       "A personal portfolio website showcasing projects and skills with a modern, responsive design.",
-    logo: "/placeholder.svg?height=80&width=80",
+    logo: nextjsIcon,
     technologies: ["Next.js", "Framer Motion", "Tailwind CSS"],
-    githubUrl: "https://github.com/username/portfolio",
-    websiteUrl: "https://portfolio.example.com",
+    githubUrl: `${gitHubBaseUrl}/zaroc-portfolio`,
+    websiteUrl: "https://aktamirov.de",
     featured: true,
   },
   {
     id: 5,
-    title: "Recipe Finder",
+    title: "Prüfungsvorbereitung",
     description:
-      "A recipe search application that allows users to find recipes based on ingredients they have on hand.",
-    logo: "/placeholder.svg?height=80&width=80",
-    technologies: ["React", "Spoonacular API", "CSS Modules"],
-    githubUrl: "https://github.com/username/recipe-finder",
-    websiteUrl: "https://recipe-finder.example.com",
+      "Eine Website erstellt mit NextJS, um Anwendungsentwickler auf die Abschlussprüfung vorzubereiten.",
+    logo: nextjsIcon,
+    technologies: ["JavaScript", "React", "NextJS", "MDX"],
+    githubUrl: "https://github.com/z4roc/pruefungsvorbereitung",
+    websiteUrl: "https://pruefungsvorbereitung.aktamirov.de",
     featured: false,
   },
   {
     id: 6,
-    title: "Markdown Note Taking App",
+    title: "Ausbildungsberichte",
     description:
-      "A note-taking application with markdown support, tagging, and search functionality.",
-    logo: "/placeholder.svg?height=80&width=80",
-    technologies: ["TypeScript", "React", "IndexedDB", "Marked.js"],
-    githubUrl: "https://github.com/username/markdown-notes",
+      "Eine App erstellt mit flutter, um meine Ausbildungsberichte am Handy und im Web schreiben zu können und sie anschließend als PDF zu exportieren.",
+    logo: flutterIcon,
+    technologies: ["Flutter", "Firebase"],
+    githubUrl: "https://github.com/z4roc/berichtverwaltung_flutter",
+    websiteUrl: "https://berichte.aktamirov.de",
+    featured: false,
+  },
+  {
+    id: 7,
+    title: "MyPass",
+    description:
+      "Eine kleine WPF .NET Anwendung, um die eigenen Passwörter zu verwalten",
+    logo: csharpIcon,
+    technologies: ["C#", ".NET", "WPF"],
+    githubUrl: "https://github.com/z4roc/MyPass",
+    websiteUrl: null,
+    featured: false,
+  },
+  {
+    id: 8,
+    title: "ChatApp",
+    description:
+      "Chat application with real-time messaging on the same network with .NET WPF",
+    logo: csharpIcon,
+    technologies: ["C#", ".NET", "WPF"],
+    githubUrl: "https://github.com/z4roc/ChatApp",
+    websiteUrl: null,
+    featured: false,
+  },
+  {
+    id: 9,
+    title: "hyprdots",
+    description:
+      "My fork of the HyDE Project, simple and aesthetic Linux desktop setup with Hyprland and Waybar",
+    logo: archIcon,
+    technologies: ["Hyprland", "Linux", "Shell"],
+    githubUrl: "https://github.com/z4roc/hyprdots",
     websiteUrl: null,
     featured: false,
   },
@@ -217,7 +247,7 @@ export default function ProjectsSection() {
             My Projects
           </h1>
           <p className="mt-4 text-muted-foreground md:text-xl">
-            A collection of projects I've worked on
+            A collection of projects I&apos;ve worked on
           </p>
         </motion.div>
 

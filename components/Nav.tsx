@@ -37,7 +37,7 @@ export function Nav({ className }: { className?: string }) {
         </li>
         <li>
           <Link
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/arthur-aktamirov"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -60,23 +60,5 @@ export function Nav({ className }: { className?: string }) {
         </li>
       </ul>
     </nav>
-  );
-}
-
-function NavLink({
-  href,
-  children,
-}: {
-  href: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <Link
-      href={href}
-      className=" hover:text-white transition-colors relative group"
-    >
-      {children}
-      <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-tertiary transition-all group-hover:w-full" />
-    </Link>
   );
 }
