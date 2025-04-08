@@ -9,7 +9,7 @@ import { gitHubBaseUrl } from "@/lib/links";
 
 export function Nav({ className }: { className?: string }) {
   const { theme } = useTheme();
-
+  console.log("theme", theme);
   return (
     <nav
       className={`absolute w-full flex h-16 items-center justify-between border-b-2 border-accent backdrop-blur-lg shadow-lg ${className}`}
@@ -17,9 +17,9 @@ export function Nav({ className }: { className?: string }) {
       <Link href="/" className="flex items-center ml-4">
         <Image
           src={
-            theme == "dark"
-              ? "/logo/logo_white_full.png"
-              : "/logo/logo_black_full.png"
+            theme == "light"
+              ? "/logo/logo_black_full.png"
+              : "/logo/logo_white_full.png"
           }
           alt="logo_full"
           width={200}
@@ -48,7 +48,7 @@ export function Nav({ className }: { className?: string }) {
           </Link>
         </li>
         <li>
-          <Link href="mailto:contact@example.com">
+          <Link href="mailto:arthur@aktamirov.de">
             <Button variant="ghost" size="icon">
               <Mail className="h-5 w-5" />
               <span className="sr-only">Email</span>

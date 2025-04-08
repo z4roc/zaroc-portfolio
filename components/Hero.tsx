@@ -114,7 +114,7 @@ export default function HeroSection() {
                 </Link>
               </Button>
               <Button variant="outline" asChild>
-                <Link href="#contact">Get In Touch</Link>
+                <a href="mailto:arthur@aktamirov.de">Get In Touch</a>
               </Button>
             </div>
             <div className="flex items-center gap-4 pt-4">
@@ -138,7 +138,7 @@ export default function HeroSection() {
                   <span className="sr-only">LinkedIn</span>
                 </Button>
               </Link>
-              <Link href="mailto:contact@example.com">
+              <Link href="mailto:arthur@aktamirov.de">
                 <Button variant="ghost" size="icon">
                   <Mail className="h-5 w-5" />
                   <span className="sr-only">Email</span>
