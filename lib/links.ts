@@ -1,4 +1,4 @@
-const gitHubBaseUrl = "https://github.com/z4roc";
+const gitHubBaseUrl = "https://github.com/ruzbyte";
 const linkedInBaseUrl = "https://www.linkedin.com/in/arthur-aktamirov";
 const mailTo = "mailto:arthur@aktamirov.de";
 
